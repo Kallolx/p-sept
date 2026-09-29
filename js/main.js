@@ -7,7 +7,7 @@ const RING_IMAGES = Array.from({ length: 10 }, (_, i) => `assets/images/ring/rin
 // third item is the real screenshot slug where one exists (null keeps the
 // generic cycling archive art) - always the wide hero crop.
 const ARCHIVE = [
-  ['OneDigitalSpot', '26', 'onedigitalspot'], ['MagicRemover AI', '26', null], ['Toolbox Central', '25', 'tooltune'],
+  ['OneDigitalSpot', '26', 'onedigitalspot'], ['Toolbox Central', '25', 'tooltune'],
   ['Photocard Generator', '25', 'photocard'],
   ['Citizen', '24', 'civix'],
   ['Star Vibe', '26', 'starvibe'], ['Niyenin.com', '26', 'niyenin'], ['Mailflow', '26', 'mailflow'],
