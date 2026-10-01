@@ -327,6 +327,25 @@ ul { list-style: none; }
   background: var(--gold); color: var(--ink); display: grid; place-items: center; overflow: hidden;
   transform: translate(100%, -100%); transition: transform .3s cubic-bezier(.2,.8,.2,1);
 }
+/* Coming-soon overlay: project exists but isn't public yet - the image stays blurred/dimmed
+   behind a pulsing badge instead of showing the real screenshot */
+.work-img.coming-soon img, .detail-hero.coming-soon img { filter: blur(4px) brightness(.4) saturate(.7); transform: scale(1.06); }
+.work-card:hover .work-img.coming-soon img { filter: blur(4px) brightness(.35) saturate(.7); transform: scale(1.1); }
+.work-img.coming-soon::after, .detail-hero.coming-soon::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(18,17,13,.25), rgba(18,17,13,.78));
+  z-index: 1;
+}
+.coming-soon-badge {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  display: inline-flex; align-items: center; gap: 9px; padding: 11px 20px;
+  border: 1px solid rgba(145,123,80,.5); border-radius: 999px;
+  background: rgba(18,17,13,.55); backdrop-filter: blur(6px);
+  font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold);
+  z-index: 2; white-space: nowrap;
+}
+.coming-soon-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: cs-pulse 1.6s ease-in-out infinite; }
+@keyframes cs-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(1.7); } }
 .work-card:hover .work-arrow { transform: none; }
 /* the arrow enters its box from the opposite (bottom-left) corner, just after the box lands */
 .work-arrow svg {
